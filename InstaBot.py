@@ -2,6 +2,7 @@
 import random
 from instapy import InstaPy
 from instapy import smart_run
+from instapy.plugins import InstaPyTelegramBot
 
 # login credentials
 #insta_username = 'khoshkbar_mojallal'
@@ -26,7 +27,9 @@ accounts = ['accounts with similar content']
 # get a session!
 session = InstaPy(username=insta_username,
                   password=insta_password,
+                  bypass_with_mobile=True,
                   headless_browser=True)
+telegram = InstaPyTelegramBot(token='1223126580:AAENKVIComz0-6kl-074oOFbRIzL4EG5P-A', telegram_username='amintimi', instapy_session=session)
 
 with smart_run(session):
     # settings
