@@ -56,14 +56,14 @@ with smart_run(session):
     # activity
     
     session.follow_by_tags(random.sample(like_tag_list, 3),
-                         amount=random.randint(50, 100), interact=True)
+                         amount=random.randint(100, 200), interact=True)
     session.like_by_tags(random.sample(like_tag_list, 3),
                          amount=random.randint(50, 100), interact=True)
     session.unfollow_users(amount=random.randint(75, 150),
                            instapy_followed_enabled=True,
                            instapy_followed_param="all", 
                            style="FIFO",
-                           unfollow_after=48 * 60 * 60, sleep_delay=501)
+                           unfollow_after=48 * 60 * 60, sleep_delay=3600)
 
    # """ Joining Engagement Pods...
    # """
