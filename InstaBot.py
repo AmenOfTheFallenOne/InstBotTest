@@ -30,8 +30,10 @@ session = InstaPy(username=insta_username,
 
 with smart_run(session):
     # settings
+    session.set_delimit_liking(enabled=True, max_likes=1005, min_likes=20)
     session.set_relationship_bounds(enabled=True,
-                                    max_followers=15000)
+                                    min_followers=100,
+                                    max_followers=10000)
     session.set_quota_supervisor(enabled=True, sleep_after=["likes", "comments_d", "follows", "unfollows", "server_calls_h"], sleepyhead=True, stochastic_flow=True, notify_me=True,
                               peak_likes_hourly=57,
                               peak_likes_daily=585,
