@@ -26,7 +26,7 @@ accounts = ['accounts with similar content']
 # get a session!
 session = InstaPy(username=insta_username,
                   password=insta_password,
-                  headless_browser=False)
+                  headless_browser=True)
 
 with smart_run(session):
     # settings
