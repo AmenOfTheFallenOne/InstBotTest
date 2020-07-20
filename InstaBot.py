@@ -28,7 +28,7 @@ accounts = ['accounts with similar content']
 session = InstaPy(username=insta_username,
                   password=insta_password,
                   headless_browser=True)
-telegram = InstaPyTelegramBot(token='1371197054:AAGqGH9-NQdgKOH1zvZYptWwFq-w3NNxtHM', telegram_username='amintimi', instapy_session=session)
+#telegram = InstaPyTelegramBot(token='1371197054:AAGqGH9-NQdgKOH1zvZYptWwFq-w3NNxtHM', telegram_username='amintimi', instapy_session=session)
 
 with smart_run(session):
     # settings
