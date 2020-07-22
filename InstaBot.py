@@ -22,9 +22,7 @@ ignore_list = ['']
 accounts = ['accounts with similar content']
 
 # get a session!
-session = InstaPy(username=insta_username,
-                  password=insta_password,
-                  nogui=True)
+session = InstaPy(nogui=True)
 
 with smart_run(session):
     # settings
