@@ -5,10 +5,7 @@ from instapy import smart_run
 from instapy.plugins import InstaPyTelegramBot
 
 # login credentials
-#insta_username = 'khoshkbar_mojallal'
-#insta_password = '09124449704'
-insta_username = 'economic_intelligence'
-insta_password = '@hldv.,pdn'
+
 
 
 dont_likes = ['sex', 'nude']
