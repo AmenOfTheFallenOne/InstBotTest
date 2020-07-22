@@ -14,7 +14,7 @@ friends = ['list of friends I do not want to interact with']
 
 #like_tag_list = ['indiegame','gamedev','2dgame','indiegamedev']
 #like_tag_list = ['خشکبار','پسته','آجیل','خوراکی','بادام']
-like_tag_list = ['بورس','ارز','بازار سرمایه','بازار','سواد مالی']
+like_tag_list = ['بورس','ارز','بازار سرمایه','سواد مالی']
 
 # prevent posts that contain some plantbased meat from being skipped
 ignore_list = ['']
@@ -24,15 +24,12 @@ accounts = ['accounts with similar content']
 # get a session!
 session = InstaPy(username=insta_username,
                   password=insta_password,
-                  headless_browser=True)
-#telegram = InstaPyTelegramBot(token='1371197054:AAGqGH9-NQdgKOH1zvZYptWwFq-w3NNxtHM', telegram_username='amintimi', instapy_session=session)
+                  nogui=True)
 
 with smart_run(session):
     # settings
-    session.set_delimit_liking(enabled=True, max_likes=1005, min_likes=20)
     session.set_relationship_bounds(enabled=True,
-                                    min_followers=100,
-                                    max_followers=10000)
+                                    max_followers=15000)
     session.set_quota_supervisor(enabled=True, sleep_after=["likes", "comments_d", "follows", "unfollows", "server_calls_h"], sleepyhead=True, stochastic_flow=True, notify_me=True,
                               peak_likes_hourly=57,
                               peak_likes_daily=585,
@@ -55,28 +52,11 @@ with smart_run(session):
     # activity
     
     session.follow_by_tags(random.sample(like_tag_list, 3),
-                         amount=random.randint(100, 200), interact=True)
+                         amount=random.randint(50, 100), interact=True)
     session.like_by_tags(random.sample(like_tag_list, 3),
                          amount=random.randint(50, 100), interact=True)
     session.unfollow_users(amount=random.randint(75, 150),
                            instapy_followed_enabled=True,
                            instapy_followed_param="all", 
                            style="FIFO",
-                           unfollow_after=48 * 60 * 60, sleep_delay=3600)
-
-   # """ Joining Engagement Pods...
-   # """
-   # photo_comments = ['Nice shot! @{}',
-   #     'I love your profile! @{}',
-    #    'Wonderful :thumbsup:',
-     #   'Just incredible :open_mouth:',
-     #   'What camera did you use @{}?',
-      #  'Love your posts @{}',
-      #  'Looks awesome @{}',
-      #  'Getting inspired by you @{}',
-      #  ':raised_hands: Yes!',
-      #  'I can feel your passion @{} :muscle:']
-
-  #  session.set_do_comment(enabled = True, percentage = 95)
-  #  session.set_comments(photo_comments, media = 'Photo')
-   ## session.join_pods(topic='travel')
+                           unfollow_after=48 * 60 * 60, sleep_delay=501)
