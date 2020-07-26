@@ -14,7 +14,8 @@ friends = ['list of friends I do not want to interact with']
 
 #like_tag_list = ['indiegame','gamedev','2dgame','indiegamedev']
 #like_tag_list = ['خشکبار','پسته','آجیل','خوراکی','بادام']
-like_tag_list = ['بورس','ارز','بازار سرمایه','سواد مالی']
+like_tag_list = ['تحلیل بنیادی']
+
 
 # prevent posts that contain some plantbased meat from being skipped
 ignore_list = ['']
@@ -27,7 +28,9 @@ session = InstaPy(nogui=True)
 with smart_run(session):
     # settings
     session.set_relationship_bounds(enabled=True,
-                                    max_followers=15000)
+                                    delimit_by_numbers=True,
+                                    max_followers=5000,
+                                    min_followers=20)
     session.set_quota_supervisor(enabled=True, sleep_after=["likes", "comments_d", "follows", "unfollows", "server_calls_h"], sleepyhead=True, stochastic_flow=True, notify_me=True,
                               peak_likes_hourly=57,
                               peak_likes_daily=585,
@@ -49,8 +52,7 @@ with smart_run(session):
 
     # activity
     
-    session.follow_by_tags(random.sample(like_tag_list, 3),
-                         amount=random.randint(50, 100), interact=True)
+    session.follow_by_tags(like_tag_list, interact=True,amount = 500)
     session.like_by_tags(random.sample(like_tag_list, 3),
                          amount=random.randint(50, 100), interact=True)
     session.unfollow_users(amount=random.randint(75, 150),
