@@ -53,8 +53,7 @@ with smart_run(session):
     # activity
     
     session.follow_by_tags(like_tag_list, interact=True,amount = 500)
-    session.like_by_tags(random.sample(like_tag_list, 3),
-                         amount=random.randint(50, 100), interact=True)
+    
     session.unfollow_users(amount=random.randint(75, 150),
                            instapy_followed_enabled=True,
                            instapy_followed_param="all", 
