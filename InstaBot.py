@@ -14,7 +14,7 @@ friends = ['list of friends I do not want to interact with']
 
 #like_tag_list = ['indiegame','gamedev','2dgame','indiegamedev']
 #like_tag_list = ['خشکبار','پسته','آجیل','خوراکی','بادام']
-like_tag_list = ['تحلیل بنیادی']
+like_tag_list = ['بورس']
 
 
 # prevent posts that contain some plantbased meat from being skipped
